@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <link rel="stylesheet" type="text/css" href="main.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+     <script type="text/javascript" charset="utf-8" async>
+$(document).ready(function() {
+	var $sel = {
+		paper: $('#paper'),
+		bk: '#bkrd',
+		cl: '.',
+		tb: '#tab',
+		tab: $('.tab')
+	};
+	$sel.paper.animate({
+		top: '75px'
+	}, 800);
+	$sel.tab.click(function() {
+		var $this = parseInt($(this).attr('number')),
+			num = 0;
+		num = ($this === 2) ? 1 : 2;
+		$sel.paper.animate({
+			top: '405px'
+		}, function() {
+			$($sel.bk + num).attr('id', 'bkrd' + $this);
+			$($sel.cl + num).hide();
+			$($sel.cl + $this).show();
+			$($sel.tb + $this).addClass('hidden');
+			$($sel.tb + num).removeClass('hidden');
+			$sel.paper.animate({
+				top: '75px'
+			}, 800);
+		});
+	});
+
+	function preload(arrayOfImages) {
+		$(arrayOfImages).each(function() {
+			$('<img/>')[0].src = this;
+		});
+	};
+	preload(['media/Tab_1.png', 'media/Tab_2.png', 'media/paper.png', 'media/bottom.png']);
+});
+</script>
+    </head>
+    <body>
+      <div id="wrapper">
+			<div class="instructions">Click on each category to learn more.</div>
+			<div id="tab1" class="tab hidden" number="1"></div>
+			<div id="tab2" class="tab" number="2"></div>
+		<div id="bkrd1">
+		  <div id="paper">
+			<div id="text" class="1" >
+				<div class="sectionTitle">Direct Lung Injury</div> 
+				<br/>Pneumonia<br/>
+				Aspiration<br/>
+				Inhalation injury 
+     			<div class="indent">Oxygen toxicity</div>
+     			<div class="indent">Smoke</div>
+     			<div class="indent">Irritant gases</div>
+     			<div class="indent">and chemicals</div>
+				Pulmonary contusion<br/>
+				Pulmonary hemorrhage<br/>
+				Near drowning
+			</div>
+			<div id="text" class="hidden 2">
+				<div class="sectionTitle">Indirect Lung Injury</div> 
+				<br/>Sepsis<br/>
+				Severe trauma
+     			<div class="indent">Mechanical trauma, including head injuries</div>
+				Acute pancreatitis<br/>
+				Cardiopulmonary bypass<br/>
+				Multisystem organ failure<br/>
+				Burns<br/>
+				Ionizing radiations<br/>
+				Chemical injuries (e.g., heroin or methadone overdose,
+  					<div class="indent">acetylsalicylic acid, barbiturate overdose) </div>
+				Hematological conditions (e.g., multiple transfusions,
+  					<div class="indent">disseminated intravascular coagulation)</div>
+				Hypersensitivity reactions<br/>
+				Uremia
+			</div>
+		</div>
+		 <div id="bottom"></div>
+	   </div>
+	  </div>
+    </body>
+</html>	

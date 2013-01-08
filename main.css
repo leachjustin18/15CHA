@@ -1,0 +1,58 @@
+body {
+font-family:Arial, Helvetica, sans-serif;
+font-size: 13px;
+}
+#wrapper {
+width: 550px; 
+height: 430px;
+overflow: hidden; 
+}
+.instructions {font-style: italic;}
+.hidden {display: none;}
+.sectionTitle {font-weight: bold; font-size:16px;}
+.indent{margin-left: 10px;}
+#text{padding: 20px;}
+#bkrd1{
+	background: url('Tab_1.png');
+	width: 528px;
+	height: 430px;
+	z-index: -1;
+}
+#bkrd2 {
+	background: url('Tab_2.png');
+	width: 528px;
+	height: 430px;
+	z-index: -1;
+}
+#tab1 {
+	width: 250px;
+	height: 35px;
+	position: absolute;
+	top: 20px;
+	left: 6px;
+	cursor: pointer;
+}
+#tab2{
+	width: 250px;
+	height: 35px;
+	position: absolute;
+	top: 20px;
+	left: 269px;
+	cursor: pointer;
+}
+#paper{
+	background: url('paper.png');
+	width: 482px;
+	height: 341px;
+	position: absolute;
+	left: 27px;
+	top: 405px;
+}
+#bottom{
+	background: url('bottom.png');
+	width:528px;
+	height: 60px;
+	position: absolute;
+	z-index: 1;
+	top:385px;
+}

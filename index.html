@@ -15,7 +15,7 @@ $(document).ready(function() {
 	};
 	$sel.paper.animate({
 		top: '75px'
-	}, 800);
+	});
 	$sel.tab.click(function() {
 		var $this = parseInt($(this).attr('number')),
 			num = 0;
@@ -30,7 +30,7 @@ $(document).ready(function() {
 			$($sel.tb + num).removeClass('hidden');
 			$sel.paper.animate({
 				top: '75px'
-			}, 800);
+			});
 		});
 	});
 
